@@ -1,0 +1,64 @@
+/**
+ * Variables CSS globales
+ * Centralise toutes les valeurs de design pour faciliter la maintenance
+ */
+
+:root {
+    /* Palette de couleurs - Charte Coopératives */
+    --couleur-orange: #F6A02D;
+    --couleur-rouge: #E73334;
+    --couleur-cyan: #63C2CD;
+    --couleur-gris-fonce: #B2B2B2;
+    --couleur-gris-clair: #DADADA;
+    --couleur-bleu-fonce: #133D69;
+    --couleur-peche: #F28E7C;
+    --couleur-orange-clair: #FBC786;
+    --couleur-cyan-clair: #AFDCE1;
+
+    /* Couleurs fonctionnelles */
+    --couleur-succes: #2ecc71;
+    --couleur-erreur: #e74c3c;
+    --couleur-texte-principal: #333333;
+    --couleur-texte-secondaire: #666666;
+    --couleur-fond: #ffffff;
+
+    /* Espacements */
+    --espacement-xs: 5px;
+    --espacement-sm: 10px;
+    --espacement-md: 15px;
+    --espacement-lg: 20px;
+    --espacement-xl: 30px;
+    --espacement-xxl: 40px;
+
+    /* Rayons de bordure */
+    --rayon-petit: 8px;
+    --rayon-moyen: 15px;
+    --rayon-grand: 20px;
+    --rayon-rond: 50%;
+
+    /* Ombres */
+    --ombre-legere: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --ombre-moyenne: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --ombre-forte: 0 10px 40px rgba(0, 0, 0, 0.15);
+
+    /* Transitions */
+    --transition-rapide: 0.2s ease;
+    --transition-normale: 0.3s ease;
+    --transition-lente: 0.5s ease;
+
+    /* Typographie */
+    --police-principale: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --police-code: 'Courier New', monospace;
+
+    --taille-texte-petit: 0.85em;
+    --taille-texte-normal: 1em;
+    --taille-texte-moyen: 1.3em;
+    --taille-texte-grand: 1.5em;
+    --taille-texte-tres-grand: 2em;
+
+    /* Z-index */
+    --z-index-base: 1;
+    --z-index-dropdown: 10;
+    --z-index-modal: 100;
+    --z-index-tooltip: 1000;
+}

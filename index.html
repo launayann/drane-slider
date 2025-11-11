@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Générateur de présentations HTML éco-responsables pour les coopératives pédagogiques">
+    <title>Générateur de Présentation Éco-responsable - DRANE</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/composants.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="conteneur">
+        <!-- En-tête -->
+        <header class="en-tete">
+            <div class="logo" aria-label="Logo des coopératives"></div>
+            <div>
+                <h1 class="titre-principal">Générateur de Présentation Éco-responsable</h1>
+                <p class="sous-titre">Coopératives pédagogiques | numériques</p>
+            </div>
+            <div class="badge-eco">
+                🌱 95% moins de CO₂
+            </div>
+        </header>
+
+        <!-- Espace de travail -->
+        <div class="espace-travail">
+            <!-- Panneau de configuration -->
+            <div class="panneau">
+                <h2 class="panneau-titre">📝 Votre contenu</h2>
+
+                <!-- Zone de dépôt de fichier -->
+                <div class="zone-depot" id="zoneDepotFichier">
+                    <div class="icone-depot">📄</div>
+                    <p><strong>Déposez votre fichier Markdown</strong></p>
+                    <p style="color: var(--couleur-gris-fonce); margin-top: 10px;">
+                        ou cliquez pour sélectionner
+                    </p>
+                    <input type="file" id="inputFichier" accept=".md,.txt,.markdown">
+                </div>
+
+                <!-- Contrôles -->
+                <div class="controles">
+                    <!-- Zone de texte Markdown -->
+                    <div class="groupe-controle">
+                        <label for="zoneTexteMarkdown">Ou saisissez votre Markdown</label>
+                        <textarea
+                            id="zoneTexteMarkdown"
+                            placeholder="# Titre principal
+
+## Section 1
+
+- Point 1
+- Point 2
+
+---
+
+## Section 2
+
+Contenu de la section 2..."></textarea>
+                    </div>
+
+                    <!-- Sélecteur de thème -->
+                    <div class="groupe-controle">
+                        <label>Thème de présentation</label>
+                        <div class="selecteur-themes" id="conteneurThemes">
+                            <!-- Généré dynamiquement par JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Boutons d'action -->
+                    <div class="groupe-boutons">
+                        <button class="bouton" id="boutonGenerer">
+                            🎬 Générer la présentation
+                        </button>
+                        <button class="bouton secondaire" id="boutonTelecharger">
+                            💾 Télécharger HTML
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Informations sur le format Markdown -->
+                <div class="boite-info">
+                    <h3>💡 Format Markdown pour slides</h3>
+                    <p>Utilisez <code>---</code> pour séparer les slides</p>
+                    <p>Utilisez <code>##</code> pour les titres de slide</p>
+                    <p>Les listes <code>-</code> s'affichent avec animation</p>
+                    <p>Utilisez <code>**texte**</code> pour le gras et <code>*texte*</code> pour l'italique</p>
+                </div>
+
+                <!-- Statistiques -->
+                <div class="statistiques">
+                    <div class="carte-stat">
+                        <div class="valeur-stat" id="statTaille">0 KB</div>
+                        <div class="label-stat">Poids total</div>
+                    </div>
+                    <div class="carte-stat">
+                        <div class="valeur-stat" id="statSlides">0</div>
+                        <div class="label-stat">Slides</div>
+                    </div>
+                    <div class="carte-stat">
+                        <div class="valeur-stat" id="statCO2">0g</div>
+                        <div class="label-stat">CO₂ économisé</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panneau de prévisualisation -->
+            <div class="panneau">
+                <h2 class="panneau-titre">👁️ Aperçu de la présentation</h2>
+
+                <!-- Iframe de prévisualisation -->
+                <div class="conteneur-previsualisation">
+                    <iframe
+                        id="iframePrevisualisation"
+                        class="iframe-previsualisation"
+                        title="Prévisualisation de la présentation"
+                        sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+                </div>
+
+                <!-- Instructions de navigation -->
+                <div class="navigation-info">
+                    <p><strong>Navigation dans la présentation :</strong></p>
+                    <p>→ Flèches ou Espace : Slide suivante</p>
+                    <p>← Flèche gauche : Slide précédente</p>
+                    <p>F : Plein écran • ESC : Vue d'ensemble</p>
+                    <p>O : Vue d'ensemble des slides (Overview)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application JavaScript (modules ES6) -->
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
