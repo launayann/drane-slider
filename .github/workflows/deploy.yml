@@ -1,0 +1,59 @@
+name: Déploiement GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Permissions nécessaires pour déployer sur GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permet un seul déploiement à la fois
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Job de build
+  build:
+    name: 🏗️ Build du site
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Récupération du code
+      uses: actions/checkout@v4
+
+    - name: 📋 Configuration de GitHub Pages
+      uses: actions/configure-pages@v4
+
+    - name: 📦 Upload des artefacts
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+
+  # Job de déploiement
+  deploy:
+    name: 🚀 Déploiement
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: 🌐 Déploiement sur GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+    - name: ✅ Déploiement réussi
+      run: |
+        echo "════════════════════════════════════════════"
+        echo "✅ Déploiement réussi !"
+        echo "════════════════════════════════════════════"
+        echo ""
+        echo "🌐 URL: ${{ steps.deployment.outputs.page_url }}"
+        echo ""
+        echo "Votre application est maintenant accessible en ligne ! 🎉"
