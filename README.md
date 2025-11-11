@@ -249,4 +249,4 @@ Pour contribuer :
 
 ---
 
-**Développé avec ❤️ pour les coopératives pédagogiques | numériques**
+**Développé avec ❤️ pour les coopératives pédagogiques numériques**
