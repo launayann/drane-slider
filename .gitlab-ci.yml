@@ -41,7 +41,15 @@ validation:css:
     - npm install -g stylelint stylelint-config-standard
   script:
     - echo "🎨 Vérification des fichiers CSS..."
-    - echo '{ "extends": "stylelint-config-standard", "rules": { "no-descending-specificity": null } }' > .stylelintrc.json
+    - |
+      cat > .stylelintrc.json << 'EOF'
+      {
+        "extends": "stylelint-config-standard",
+        "rules": {
+          "no-descending-specificity": null
+        }
+      }
+      EOF
     - npx stylelint "assets/css/**/*.css" || true
     - echo "✅ Validation CSS terminée"
   allow_failure: true
