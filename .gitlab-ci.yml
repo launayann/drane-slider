@@ -183,15 +183,20 @@ pages:
   script:
     - echo "📦 Préparation du déploiement GitLab Pages..."
     - mkdir -p public
-    - cp -r * public/ 2>/dev/null || true
-    - rm -rf public/.git public/.github
+    # Copier les fichiers nécessaires (éviter la récursion avec public/)
+    - cp index.html public/ 2>/dev/null || true
+    - cp -r assets public/ 2>/dev/null || true
+    - cp README.md public/ 2>/dev/null || true
+    - cp QUICK-START.md public/ 2>/dev/null || true
+    - cp DEPLOIEMENT.md public/ 2>/dev/null || true
+    # Ne pas copier les fichiers/dossiers CI/CD
     - echo "✅ Fichiers copiés dans public/"
+    - ls -la public/
   artifacts:
     paths:
       - public
-    expire_in: 1 day
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
+  only:
+    - main
   environment:
     name: production
     url: https://ylaunay.forge.apps.education.fr/drane-slider
