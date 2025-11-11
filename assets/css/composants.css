@@ -107,7 +107,7 @@ body {
     color: var(--couleur-bleu-fonce);
     font-size: var(--taille-texte-moyen);
     margin-bottom: var(--espacement-md);
-    padding-bottom: var(--espacement-petit);
+    padding-bottom: var(--espacement-sm);
     border-bottom: 3px solid var(--couleur-orange);
 }
 
@@ -149,7 +149,7 @@ body {
 .groupe-controle {
     display: flex;
     flex-direction: column;
-    gap: var(--espacement-petit);
+    gap: var(--espacement-sm);
 }
 
 .groupe-controle label {
@@ -308,7 +308,7 @@ body {
 
 .boite-info h3 {
     color: var(--couleur-succes);
-    margin-bottom: var(--espacement-petit);
+    margin-bottom: var(--espacement-sm);
     font-size: 1.1em;
 }
 
