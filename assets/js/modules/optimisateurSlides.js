@@ -41,7 +41,7 @@ export function optimiserSlide(contenuHTML, metadonnees = {}) {
   }
 
   // Sinon, redécouper intelligemment
-  return redecouper SlideIntelligente(contenuHTML, analyse, metadonnees);
+  return redecouperSlideIntelligente(contenuHTML, analyse, metadonnees);
 }
 
 /**
